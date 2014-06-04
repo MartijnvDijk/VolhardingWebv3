@@ -33,7 +33,7 @@
           <li><a href="Wedstrijdinfo.aspx">Wedstrijdinfo</a></li>
           <li><a href="Media.aspx">Media</a></li>
           <li class="current"><a href="Team.aspx">Team</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="Login.aspx"><asp:Label ID="LblTest" runat="server" Text="Label"></asp:Label></a></li>
         </ul>
       </div><!--close menu-->
     </div><!--close menubar-->	
@@ -68,20 +68,17 @@
         <div class="content_item">
 		  <h1>Materiaal</h1>
             <p>
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceMateriaal" Width="573px">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceMateriaal" Width="577px">
                     <Columns>
+                        <asp:BoundField DataField="AANTAL" HeaderText="AANTAL" SortExpression="AANTAL" />
                         <asp:BoundField DataField="NAAM" HeaderText="NAAM" SortExpression="NAAM" />
-                        <asp:BoundField DataField="BAL" HeaderText="BAL" SortExpression="BAL" />
-                        <asp:BoundField DataField="PION" HeaderText="PION" SortExpression="PION" />
-                        <asp:BoundField DataField="SHIRT" HeaderText="SHIRT" SortExpression="SHIRT" />
                     </Columns>
                 </asp:GridView>
-                <asp:SqlDataSource ID="SqlDataSourceMateriaal" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionStringVolhardingOracle %>" ProviderName="<%$ ConnectionStrings:ConnectionStringVolhardingOracle.ProviderName %>" SelectCommand="SELECT &quot;NAAM&quot;, &quot;BAL&quot;, &quot;PION&quot;, &quot;SHIRT&quot; FROM &quot;MATERIAAL&quot;"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSourceMateriaal" runat="server" ConnectionString="<%$ ConnectionStrings:DBI296112.fhictora %>" ProviderName="<%$ ConnectionStrings:DBI296112.fhictora.ProviderName %>" SelectCommand="SELECT &quot;AANTAL&quot;, &quot;NAAM&quot; FROM &quot;MATERIAAL&quot;"></asp:SqlDataSource>
             </p> 
 		  <div class="content_container">
 		  	<div class="button_small">
 		        Lees meer
-		        <asp:Label ID="LblTest" runat="server" Text="Label"></asp:Label>
 		    </div><!--close button_small-->
 		  </div><!--close content_container-->
           <div class="content_container">

@@ -33,7 +33,7 @@
           <li class="current"><a href="Wedstrijdinfo.aspx">Wedstrijdinfo</a></li>
           <li><a href="Media.aspx">Media</a></li>
           <li><a href="Team.aspx">Team</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="Login.aspx">Login</a></li>
         </ul>
       </div><!--close menu-->
     </div><!--close menubar-->	
