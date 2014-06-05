@@ -17,10 +17,13 @@ namespace VolhardingWebv3.GUI
         private OracleConnection con = new OracleConnection();
         Classes.Manager manager = new Classes.Manager();
         Classes.Materiaal materiaal = new Classes.Materiaal();
+        Classes.Team team = new Classes.Team();
         protected void Page_Load(object sender, EventArgs e)
         {
             DropDownListNaam.DataSource = Enum.GetValues(typeof(Classes.Spullen));
             DropDownListNaam.DataBind();
+
+            TeamnamenInvullen();
 
             if (!IsPostBack)
                 LblLogin.Text = Session["Gebruikersnaam"].ToString() + " , Uitloggen";
@@ -38,11 +41,19 @@ namespace VolhardingWebv3.GUI
             //cmd.Parameters.Add(":teamnaam", teamnaam);
 
             StringCollection sc = new StringCollection();
-            if (ViewState["HuidigeTable"] != null)
+            if (ViewState["HuidigeTable"] == null)
             {
                 DataTable dtHuidigeTable = (DataTable)ViewState["HuidigeTable"];
                         sc.Add(TbAantal.Text + "," + DropDownListNaam.SelectedItem.Text + "," + DropDownListTeamnaam.SelectedItem.Text);
                     materiaal.MateriaalToevoegen(sc);
+            }
+        }
+
+        private void TeamnamenInvullen()
+        {
+            foreach(string s in team.TeamLijstInvullen())
+            {
+                DropDownListTeamnaam.Items.Add(s);
             }
         }
     }

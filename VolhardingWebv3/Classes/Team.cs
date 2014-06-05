@@ -13,7 +13,9 @@ namespace VolhardingWebv3.Classes
         public string Naam { get; set; }
         public List<Materiaal> Materialen { get; set; }
         public List<Speler> SpelerLijst { get; set; }
-        public List<Team> TeamLijst { get; set; }
+        public List<string> TeamLijst { get; set; }
+
+        TeamDB db = new TeamDB();
 
         public Team(Competitie competitie, string naam)
         {
@@ -30,21 +32,31 @@ namespace VolhardingWebv3.Classes
         }
 
         public void MateriaalToevoegen(Materiaal materiaal)
-        { }
+        {
+            Materialen.Add(materiaal);
+        }
 
         public void SpelerToevoegen(Speler speler)
-        { }
-
-        public Team SelecteerTeam(string naam)
         {
-            foreach (Team t in TeamLijst)
+            SpelerLijst.Add(speler);
+        }
+
+        public string SelecteerTeam(string naam)
+        {
+            foreach (string t in TeamLijst)
             {
-                if (t.Naam == naam)
+                if (t == naam)
                 {
                     return t;
                 }
             }
             throw new NotImplementedException();
+        }
+
+        public List<string> TeamLijstInvullen()
+        {
+            TeamLijst = db.GeefAlleTeams();
+            return TeamLijst;
         }
     }
 }

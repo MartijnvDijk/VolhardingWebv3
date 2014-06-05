@@ -85,7 +85,7 @@
 		    <!--close content_container-->
           <div class="content_container">
 		      <!--close button_small-->		  
-		      <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceStand" Width="1045px">
+		      <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceStand" Width="898px">
                   <Columns>
                       <asp:BoundField DataField="STAND" HeaderText="STAND" SortExpression="STAND" />
                       <asp:BoundField DataField="TEAMNAAM" HeaderText="TEAMNAAM" SortExpression="TEAMNAAM" />

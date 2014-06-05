@@ -90,7 +90,6 @@
                 <asp:Label ID="LblTeamNaam" runat="server" Text="Teamnaam: "></asp:Label>
                 <asp:DropDownList ID="DropDownListTeamnaam" runat="server" DataSourceID="SqlDataSourceTeamNaam" DataTextField="TEAMNAAM" DataValueField="TEAMNAAM">
                 </asp:DropDownList>
-                <asp:SqlDataSource ID="SqlDataSourceTeamNaam" runat="server" ConnectionString="<%$ ConnectionStrings:DBI296112.fhictora %>" ProviderName="<%$ ConnectionStrings:DBI296112.fhictora.ProviderName %>" SelectCommand="SELECT &quot;TEAMNAAM&quot; FROM &quot;MATERIAAL&quot;"></asp:SqlDataSource>
             </p> 
 		  <div class="content_container">
                 <asp:Button ID="BtnMateriaalToevoegen" runat="server" OnClick="BtnMateriaalToevoegen_Click" Text="Materiaal Toevoegen" />

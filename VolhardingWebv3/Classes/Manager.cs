@@ -33,6 +33,22 @@ namespace VolhardingWebv3.Classes
             con = new OracleConnection();
         }
 
+        public OracleConnection ReturnNewConnection()
+        {
+            con = new OracleConnection();
+            return con;
+        }
+
+        public void Open()
+        {
+            try
+            {
+                con.Open();
+            }
+            catch
+            { }
+        }
+
         /// <summary>
         /// Verbinding met de oracle server wordt aangemaakt.
         /// </summary>
@@ -50,7 +66,6 @@ namespace VolhardingWebv3.Classes
         public void Close()
         {
             con.Close();
-            con.Dispose();
         }
 
         public bool UserLogin(string un, string pw)

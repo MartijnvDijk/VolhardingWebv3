@@ -28,8 +28,12 @@ namespace VolhardingWebv3.Classes
             Mededelingen.Add(mededeling);
         }
 
+        Manager m = new Manager();
         public string[] GeefMededlingen()
         {
+            m.NewConnection();
+            m.Connect();
+            m.Open();
             OracleConnection con = new OracleConnection();
             string[] mededelingen = new string[3];
             string query = "SELECT INHOUD FROM MEDEDELING";

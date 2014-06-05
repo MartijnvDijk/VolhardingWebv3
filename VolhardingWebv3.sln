@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolhardingWebv3", "VolhardingWebv3\VolhardingWebv3.csproj", "{6CBA90A3-0597-4F3F-9FE5-079723FBE0D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{D76299F6-8999-4840-A7C0-E4F82836DD2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6CBA90A3-0597-4F3F-9FE5-079723FBE0D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CBA90A3-0597-4F3F-9FE5-079723FBE0D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CBA90A3-0597-4F3F-9FE5-079723FBE0D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D76299F6-8999-4840-A7C0-E4F82836DD2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D76299F6-8999-4840-A7C0-E4F82836DD2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D76299F6-8999-4840-A7C0-E4F82836DD2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D76299F6-8999-4840-A7C0-E4F82836DD2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -17,6 +17,7 @@ namespace VolhardingWebv3.Classes
         public Team Team { get; set; }
         public string Naam { get; set; }
         public int Aantal { get; set; }
+        Manager m = new Manager();
 
         public Materiaal()
         {
@@ -26,6 +27,7 @@ namespace VolhardingWebv3.Classes
         public void MateriaalToevoegen(StringCollection sc)
         {
             OracleConnection conn = new OracleConnection();
+
             StringBuilder sb = new StringBuilder(string.Empty);
             string[] splitItems = null;
             foreach (string item in sc)
@@ -42,7 +44,7 @@ namespace VolhardingWebv3.Classes
 
             try
             {
-                conn.Open();
+                m.Open();   
                 OracleCommand cmd = new OracleCommand(sb.ToString(), conn);
                 cmd.CommandType = CommandType.Text;
                 cmd.ExecuteNonQuery();
@@ -50,9 +52,6 @@ namespace VolhardingWebv3.Classes
             }
             catch (OracleException ex)
             {
-                string msg = "Error";
-                msg += ex.Message;
-                throw new Exception(msg);
 
             }
             finally

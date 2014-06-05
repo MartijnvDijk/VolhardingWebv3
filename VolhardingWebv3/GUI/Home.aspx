@@ -59,8 +59,10 @@
 		<div class="sidebar">
           <div class="sidebar_item">
             <h2>Infobord</h2>
-            <h3>Juli 2014</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim.</p>         
+            <h3>Laatste Wedstrijd</h3>
+            <p>
+                <asp:Label ID="LabelLaatsteWed" runat="server" Text=""></asp:Label>
+              </p>         
 		  </div><!--close sidebar_item--> 
         </div><!--close sidebar-->
 		<div class="sidebar">

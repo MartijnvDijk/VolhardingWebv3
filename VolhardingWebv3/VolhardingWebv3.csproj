@@ -87,7 +87,9 @@
     <Compile Include="Classes\Media.cs" />
     <Compile Include="Classes\Speler.cs" />
     <Compile Include="Classes\Team.cs" />
+    <Compile Include="Classes\TeamDB.cs" />
     <Compile Include="Classes\Wedstrijd.cs" />
+    <Compile Include="Classes\WedstrijdDB.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

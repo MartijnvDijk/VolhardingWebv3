@@ -22,12 +22,26 @@ namespace VolhardingWebv3.Classes
 
         public Competitie(int stand, Team team, int gs, int wn,
             int gl, int vl, int pt, int tg, int pm)
-        { }
+        {
+            this.Stand = stand;
+            this.Team = team;
+            this.GS = gs;
+            this.WN = wn;
+            this.GL = gl;
+            this.VL = vl;
+            this.PT = pt;
+            this.TG = tg;
+            this.PM = pm;
+        }
 
         public void StandUpdaten(Wedstrijd wedstrijd)
-        { }
+        {
+ 
+        }
 
         public void CompetitieToevoegen(Competitie competitie)
-        { }
+        {
+            CompetitieLijst.Add(competitie);
+        }
     }
 }

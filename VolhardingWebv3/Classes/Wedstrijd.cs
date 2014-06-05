@@ -18,10 +18,26 @@ namespace VolhardingWebv3.Classes
         public int DoelpuntUit { get; set; }
         public List<Wedstrijd> WedstrijdLijst { get; set; }
 
+        WedstrijdDB db = new WedstrijdDB();
+
         public Wedstrijd(DateTime datum, string aanvang, string vertrek, string teamThuis, string teamUit, string scheidsinfo)
-        { }
+        {
+            this.Datum = datum;
+            this.Aanvang = aanvang;
+            this.Vertrek = vertrek;
+            this.TeamThuis = teamThuis;
+            this.TeamUit = teamUit;
+            this.Scheidsinfo = scheidsinfo;
+        }
 
         public void WedstrijdToevoegen(Wedstrijd wedstrijd)
-        { }
+        {
+            WedstrijdLijst.Add(wedstrijd);
+        }
+
+        public void AlleWedstrijden()
+        {
+            db.GeefAlleWedstrijden();
+        }
     }
 }

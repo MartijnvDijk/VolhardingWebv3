@@ -1,7 +1,7 @@
 •	Beschrijvingopdracht A4 - v
 •	Planning met mijlpalen, fasering en producten.(zie beroepsproducten in studentenhandleiding) - v
 •	Software beheer d.m.v. SVN - v
-•	Codestyle met CodeStyleCop 
+•	Codestyle met CodeStyleCop - v
 •	Databasekoppeling - v
 •	Gebruik van SqlParameters (security) - v
 •	Gebruik van Sessions - v
@@ -9,6 +9,6 @@
 •	Gebruik van een gridview - v
 •	CSS niet verplicht (mag nog kaal ogen) - v
 •	3 Tier structuur in project aanwezig - v
-•	Unit Testing
+•	Unit Testing - v
 
-9/11 - 82%
+11/11 - 100%
