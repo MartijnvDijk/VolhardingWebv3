@@ -33,7 +33,7 @@
           <li class="current"><a href="Wedstrijdinfo.aspx">Wedstrijdinfo</a></li>
           <li><a href="Media.aspx">Media</a></li>
           <li><a href="Team.aspx">Team</a></li>
-          <li><a href="Login.aspx">Login</a></li>
+          <li><a href="Login.aspx"><asp:Label ID="LblLogin" runat="server" Text="Label"></asp:Label></a></li>
         </ul>
       </div><!--close menu-->
     </div><!--close menubar-->	
@@ -74,7 +74,7 @@
                       <asp:BoundField DataField="SCHEIDSINFO" HeaderText="SCHEIDSINFO" SortExpression="SCHEIDSINFO" />
                   </Columns>
               </asp:GridView>
-              <asp:SqlDataSource ID="SqlDataSourceWedstrijden" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionStringVolhardingOracle %>" ProviderName="<%$ ConnectionStrings:ConnectionStringVolhardingOracle.ProviderName %>" SelectCommand="SELECT &quot;DATUM&quot;, &quot;AANVANG&quot;, &quot;VERTREK&quot;, &quot;TEAMTHUIS&quot;, &quot;TEAMUIT&quot;, &quot;SCHEIDSINFO&quot; FROM &quot;PROGRAMMA&quot;"></asp:SqlDataSource>
+              <asp:SqlDataSource ID="SqlDataSourceWedstrijden" runat="server" ConnectionString="<%$ ConnectionStrings:DBI296112.fhictora %>" ProviderName="<%$ ConnectionStrings:DBI296112.fhictora.ProviderName %>" SelectCommand="SELECT &quot;DATUM&quot;, &quot;AANVANG&quot;, &quot;VERTREK&quot;, &quot;TEAMTHUIS&quot;, &quot;TEAMUIT&quot;, &quot;SCHEIDSINFO&quot; FROM &quot;PROGRAMMA&quot;"></asp:SqlDataSource>
               <br />
               <br />
         <div class="content_item">
@@ -85,6 +85,21 @@
 		    <!--close content_container-->
           <div class="content_container">
 		      <!--close button_small-->		  
+		      <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceStand" Width="1045px">
+                  <Columns>
+                      <asp:BoundField DataField="STAND" HeaderText="STAND" SortExpression="STAND" />
+                      <asp:BoundField DataField="TEAMNAAM" HeaderText="TEAMNAAM" SortExpression="TEAMNAAM" />
+                      <asp:BoundField DataField="GS" HeaderText="GS" SortExpression="GS" />
+                      <asp:BoundField DataField="WN" HeaderText="WN" SortExpression="WN" />
+                      <asp:BoundField DataField="GL" HeaderText="GL" SortExpression="GL" />
+                      <asp:BoundField DataField="VL" HeaderText="VL" SortExpression="VL" />
+                      <asp:BoundField DataField="PT" HeaderText="PT" SortExpression="PT" />
+                      <asp:BoundField DataField="VR" HeaderText="VR" SortExpression="VR" />
+                      <asp:BoundField DataField="TG" HeaderText="TG" SortExpression="TG" />
+                      <asp:BoundField DataField="PM" HeaderText="PM" SortExpression="PM" />
+                  </Columns>
+              </asp:GridView>
+              <asp:SqlDataSource ID="SqlDataSourceStand" runat="server" ConnectionString="<%$ ConnectionStrings:DBI296112.fhictora %>" ProviderName="<%$ ConnectionStrings:DBI296112.fhictora.ProviderName %>" SelectCommand="SELECT &quot;STAND&quot;, &quot;TEAMNAAM&quot;, &quot;GS&quot;, &quot;WN&quot;, &quot;GL&quot;, &quot;VL&quot;, &quot;PT&quot;, &quot;VR&quot;, &quot;TG&quot;, &quot;PM&quot; FROM &quot;STAND&quot;"></asp:SqlDataSource>
 		  </div><!--close content_container-->			  
 		</div>
 		  </div><!--close content_container-->			  

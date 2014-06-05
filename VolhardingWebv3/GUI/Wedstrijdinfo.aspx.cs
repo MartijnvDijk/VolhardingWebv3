@@ -11,7 +11,8 @@ namespace VolhardingWebv3.GUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+                LblLogin.Text = Session["Gebruikersnaam"].ToString() + " , Uitloggen";
         }
     }
 }

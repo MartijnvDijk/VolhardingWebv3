@@ -26,7 +26,12 @@ namespace VolhardingWebv3.Classes
         public void UpdateTopscorer(Speler topscrorer, int doelpunten)
         { }
 
-        private OracleConnection con = new OracleConnection();
+        private OracleConnection con;
+
+        public void NewConnection()
+        {
+            con = new OracleConnection();
+        }
 
         /// <summary>
         /// Verbinding met de oracle server wordt aangemaakt.
@@ -50,9 +55,10 @@ namespace VolhardingWebv3.Classes
 
         public bool UserLogin(string un, string pw)
         {
-            OracleCommand cmd = new OracleCommand("Select username from account where username=@un and password=@pw", con);
-            cmd.Parameters.Add("@un", un);
-            cmd.Parameters.Add("@pw", pw);
+            NewConnection();
+            OracleCommand cmd = new OracleCommand("SELECT USERNAME FROM ACCOUNT WHERE username=:un and password=:pw", con);
+            cmd.Parameters.Add(":un", un);
+            cmd.Parameters.Add(":pw", pw);
             string result = Convert.ToString(cmd.ExecuteScalarAsync());
             if (String.IsNullOrEmpty(result))
             {
@@ -61,6 +67,31 @@ namespace VolhardingWebv3.Classes
             else
             { 
                 return true;
+            }
+        }
+
+        public bool UserLogin2(string un, string pw)
+        {
+            try
+            {
+                string query = "SELECT USERNAME, PASSWORD FROM ACCOUNT WHERE USERNAME=:gebruikersnaam and PASSWORD=:wachtwoord";
+                OracleCommand om = new OracleCommand(query, con);
+                om.Parameters.Add(":gebruikersnaam", un);
+                om.Parameters.Add(":wachtwoord", pw);
+                OracleDataReader reader = om.ExecuteReader();
+                bool hasRow = reader.Read();
+                if (hasRow)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
             }
         }
     }

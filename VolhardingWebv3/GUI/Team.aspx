@@ -33,7 +33,7 @@
           <li><a href="Wedstrijdinfo.aspx">Wedstrijdinfo</a></li>
           <li><a href="Media.aspx">Media</a></li>
           <li class="current"><a href="Team.aspx">Team</a></li>
-          <li><a href="Login.aspx"><asp:Label ID="LblTest" runat="server" Text="Label"></asp:Label></a></li>
+          <li><a href="Login.aspx"><asp:Label ID="LblLogin" runat="server" Text="Label"></asp:Label></a></li>
         </ul>
       </div><!--close menu-->
     </div><!--close menubar-->	
@@ -45,7 +45,7 @@
 	  <div class="sidebar_container">       
 		<div class="sidebar">
           <div class="sidebar_item">
-            <h2>New Website</h2>
+            <h2>&nbsp;</h2>
             <p>Welcome to our new website. Please have a look around, any feedback is much appreciated.</p>
           </div><!--close sidebar_item--> 
         </div><!--close sidebar-->     		
@@ -72,20 +72,30 @@
                     <Columns>
                         <asp:BoundField DataField="AANTAL" HeaderText="AANTAL" SortExpression="AANTAL" />
                         <asp:BoundField DataField="NAAM" HeaderText="NAAM" SortExpression="NAAM" />
+                        <asp:BoundField DataField="TEAMNAAM" HeaderText="TEAMNAAM" SortExpression="TEAMNAAM" />
                     </Columns>
                 </asp:GridView>
-                <asp:SqlDataSource ID="SqlDataSourceMateriaal" runat="server" ConnectionString="<%$ ConnectionStrings:DBI296112.fhictora %>" ProviderName="<%$ ConnectionStrings:DBI296112.fhictora.ProviderName %>" SelectCommand="SELECT &quot;AANTAL&quot;, &quot;NAAM&quot; FROM &quot;MATERIAAL&quot;"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSourceMateriaal" runat="server" ConnectionString="<%$ ConnectionStrings:DBI296112.fhictora %>" ProviderName="<%$ ConnectionStrings:DBI296112.fhictora.ProviderName %>" SelectCommand="SELECT &quot;AANTAL&quot;, &quot;NAAM&quot;, &quot;TEAMNAAM&quot; FROM &quot;MATERIAAL&quot;"></asp:SqlDataSource>
+                <br />
+                <br />
+                <asp:Label ID="LblAantal" runat="server" Text="Aantal: "></asp:Label>
+                <asp:TextBox ID="TbAantal" runat="server"></asp:TextBox>
+                <br />
+                <br />
+                <asp:Label ID="LblNaam" runat="server" Text="Naam: "></asp:Label>
+                <asp:DropDownList ID="DropDownListNaam" runat="server">
+                </asp:DropDownList>
+                <br />
+                <br />
+                <asp:Label ID="LblTeamNaam" runat="server" Text="Teamnaam: "></asp:Label>
+                <asp:DropDownList ID="DropDownListTeamnaam" runat="server" DataSourceID="SqlDataSourceTeamNaam" DataTextField="TEAMNAAM" DataValueField="TEAMNAAM">
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSourceTeamNaam" runat="server" ConnectionString="<%$ ConnectionStrings:DBI296112.fhictora %>" ProviderName="<%$ ConnectionStrings:DBI296112.fhictora.ProviderName %>" SelectCommand="SELECT &quot;TEAMNAAM&quot; FROM &quot;MATERIAAL&quot;"></asp:SqlDataSource>
             </p> 
 		  <div class="content_container">
-		  	<div class="button_small">
-		        Lees meer
-		    </div><!--close button_small-->
+                <asp:Button ID="BtnMateriaalToevoegen" runat="server" OnClick="BtnMateriaalToevoegen_Click" Text="Materiaal Toevoegen" />
 		  </div><!--close content_container-->
-          <div class="content_container">
-		  	<div class="button_small">
-		        Lees meer
-		    </div><!--close button_small-->		  
-		  </div><!--close content_container-->		
+            <!--close content_container-->		
 		    <!--close content_container-->
             <!--close content_container-->			  
 		</div><!--close content_item-->

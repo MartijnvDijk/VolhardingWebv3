@@ -20,6 +20,7 @@
 </head>
 
 <body>
+    <form id="form1" runat="server">
   <div id="main">
 
 	<div id="menubar">
@@ -32,7 +33,7 @@
           <li><a href="Wedstrijdinfo.aspx">Wedstrijdinfo</a></li>
           <li><a href="Media.aspx">Media</a></li>
           <li><a href="Team.aspx">Team</a></li>
-          <li><a href="Login.aspx">Login</a></li>
+          <li><a href="Login.aspx"><asp:Label ID="LblLogin" runat="server" Text="Label"></asp:Label></a></li>
         </ul>
       </div><!--close menu-->
     </div><!--close menubar-->	
@@ -51,20 +52,20 @@
 	  <div class="sidebar_container">       
 		<div class="sidebar">
           <div class="sidebar_item">
-            <h2>New Website</h2>
+            <h2>Sponsor</h2>
             <p>Welcome to our new website. Please have a look around, any feedback is much appreciated.</p>
           </div><!--close sidebar_item--> 
         </div><!--close sidebar-->     		
 		<div class="sidebar">
           <div class="sidebar_item">
-            <h2>&nbsp;</h2>
-            <h3>February 2013</h3>
+            <h2>Infobord</h2>
+            <h3>Juli 2014</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim.</p>         
 		  </div><!--close sidebar_item--> 
         </div><!--close sidebar-->
 		<div class="sidebar">
           <div class="sidebar_item">
-            <h3>January 2013</h3>
+            <h3>November 2014</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim.</p>         
 		  </div><!--close sidebar_item--> 
         </div><!--close sidebar-->  		
@@ -75,30 +76,35 @@
 		  <h1>Mededelingen</h1> 
 	      <p>Hieronder staan de laatste 4 mededelingen.</p>	  
 		  <div class="content_container">
-		    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim. Aliquam facilisis neque non nunc posuere eget volutpat metus tincidunt.</p>
+              <asp:Label ID="LblMed1" runat="server" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim. Aliquam facilisis neque non nunc posuere eget volutpat metus tincidunt."></asp:Label>
 		  	<div class="button_small">
 		        Lees meer
 		    </div><!--close button_small-->
 		  </div><!--close content_container-->
           <div class="content_container">
-		    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim. Aliquam facilisis neque non nunc posuere eget volutpat metus tincidunt.</p>          
+              <asp:Label ID="LblMed2" runat="server" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim. Aliquam facilisis neque non nunc posuere eget volutpat metus tincidunt."></asp:Label>       
 		  	<div class="button_small">
 		        Lees meer
 		    </div><!--close button_small-->		  
 		  </div><!--close content_container-->		
 		  <div class="content_container">
-		    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim. Aliquam facilisis neque non nunc posuere eget volutpat metus tincidunt.</p>
-		  	<div class="button_small">
-		        <a href="#">Lees </a>meer
+              <asp:Label ID="LblMed3" runat="server" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim. Aliquam facilisis neque non nunc posuere eget volutpat metus tincidunt."></asp:Label>
+            <div class="button_small">
+		        Lees meer
 		    </div><!--close button_small-->
 		  </div><!--close content_container-->
           <div class="content_container">
-		    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim. Aliquam facilisis neque non nunc posuere eget volutpat metus tincidunt.</p>          
-		  	<div class="button_small">
+              <asp:Label ID="LblMed4" runat="server" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim. Aliquam facilisis neque non nunc posuere eget volutpat metus tincidunt."></asp:Label>
+            <div class="button_small">
 		        Lees meer
 		    </div><!--close button_small-->		  
 		  </div><!--close content_container-->			  
 		</div><!--close content_item-->
+          <asp:TextBox ID="TbTitel" runat="server"></asp:TextBox>
+          <asp:TextBox ID="TbMed" runat="server" TextMode="MultiLine"></asp:TextBox>
+          <asp:DropDownList ID="DropDownListMededelingen" runat="server">
+          </asp:DropDownList>
+          <asp:Button ID="BtnBevestigMed" runat="server" Text="Bevestigen" OnClick="BtnBevestigMed_Click" />
       </div><!--close content-->   
 	
 	    <!--close content_beige--> 	
@@ -107,6 +113,8 @@
   </div><!--close main-->
   
     <!--close footer-->  
+  
+    </form>
   
 </body>
 </html>

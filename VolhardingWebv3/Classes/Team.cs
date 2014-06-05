@@ -7,7 +7,7 @@ namespace VolhardingWebv3.Classes
 {
     public class Team
     {
-                public Competitie Competitie { get; set; }
+        public Competitie Competitie { get; set; }
         public Materiaal Materiaal { get; set; }
         public Speler Speler { get; set; }
         public string Naam { get; set; }

@@ -12,7 +12,7 @@ namespace VolhardingWebv3.GUI
         Classes.Manager manager = new Classes.Manager();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            manager.NewConnection();
         }
 
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
@@ -20,7 +20,7 @@ namespace VolhardingWebv3.GUI
             manager.Connect();
             string un = Login1.UserName;
             string pw = Login1.Password;
-            bool result = manager.UserLogin(un,pw);
+            bool result = manager.UserLogin2(un,pw);
             if (result)
             {
                 e.Authenticated = true;

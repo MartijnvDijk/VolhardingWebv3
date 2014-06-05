@@ -20,6 +20,7 @@
 </head>
 
 <body>
+    <form id="form1" runat="server">
   <div id="main">
 
 	<div id="menubar">
@@ -32,7 +33,7 @@
           <li><a href="Wedstrijdinfo.aspx">Wedstrijdinfo</a></li>
           <li class="current"><a href="Media.aspx">Media</a></li>
           <li><a href="Team.aspx">Team</a></li>
-          <li><a href="Login.aspx">Login</a></li>
+          <li><a href="Login.aspx"><asp:Label ID="LblLogin" runat="server" Text="Label"></asp:Label></a></li>
         </ul>
       </div><!--close menu-->
     </div><!--close menubar-->	
@@ -47,24 +48,27 @@
 	
 	  <div id="content_beige">
 	    <div class="content_beige_container_box">
-		  <h4>Latest Blog Post</h4>
-	      <p> Phasellus laoreet feugiat risus. Ut tincidunt, ante vel fermentum iaculis.</p>
+	      <p> 
+              <asp:Image ID="ImageSponsor1" runat="server" />
+            </p>
 		  <div class="readmore">
-		    <a href="#">Read more</a>
+		    <a href="http://www.havens.nl/">Naar Site</a>
 		  </div><!--close readmore-->
 	    </div><!--close content_beige_container_box-->
         <div class="content_beige_container_box">
-         <h4>Latest News</h4>
-	      <p> Phasellus laoreet feugiat risus. Ut tincidunt, ante vel fermentum iaculis.</p>
+	      <p> 
+              <asp:Image ID="ImageSponsor2" runat="server" />
+            </p>
 	      <div class="readmore">
-		    <a href="#">Read more</a>
+		    <a href="http://www.jansenenjansen.nl/">Naar Site</a>
 		  </div><!--close readmore-->
 	    </div><!--close content_beige_container_box-->
         <div class="content_beige_container_boxl">
-		  <h4>Latest Projects</h4>
-	      <p> Phasellus laoreet feugiat risus. Ut tincidunt, ante vel fermentum iaculis.</p>
+	      <p> 
+              <asp:Image ID="ImageSponsor3" runat="server" />
+            </p>
 	      <div class="readmore">
-		    <a href="#">Read more</a>
+		    <a href="http://www.sportlavit.nl/winkel/">Naar Site</a>
 		  </div><!--close readmore-->	  
 	    </div><!--close content_beige_container_box1-->      
 	    <br style="clear:both"/>
@@ -74,6 +78,8 @@
   </div><!--close main-->
   
     <!--close footer-->  
+  
+    </form>
   
 </body>
 </html>
